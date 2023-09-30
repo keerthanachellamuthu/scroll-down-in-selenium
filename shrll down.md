@@ -15,11 +15,11 @@ Before starting with Selenium Scroll operations, let’s quickly understand the 
 A Scroll is a JavaScript method. The JavaScriptExecutor provides an interface that enables QAs to run JavaScript methods from Selenium scripts. Hence, to scroll up or down with Selenium, a JavaScriptExecutor is a must.
 
 Scroll functions can be defined as follows :
-
+```java
 JavascriptExecutor js = (JavascriptExecutor) driver;
 js.executeScript("window.scrollBy(0,250)", "");
 The scrollBy() method involves two parameters, x, and y, that represent the horizontal and vertical pixel values, respectively.
-
+```
 Now let’s discuss the Scroll operation in four scenarios:
 
 How to scroll down and up the webpage in Selenium by a specific number of pixels?
@@ -34,6 +34,7 @@ How to scroll horizontally on a web page to a specific web element using Seleniu
 How to scroll down on a web page in Selenium by defining the number of pixels
 Refer to the script below for performing Selenium scroll-down action on the Firefox browser.
 
+```java
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -54,6 +55,7 @@ public class HandleScroll
             js.executeScript("window.scrollBy(0,350)", "");
          }
 }
+```
 Run Selenium Tests on Real Devices
 
 Output: The code initializes the Geckodriver for Firefox. Then the Firefox browser is launched, and it navigates to the specified website URL. Once the website loads, the browser window is vertically scrolled down by 350 pixels.
@@ -64,6 +66,7 @@ If a user needs to scroll up, they just need to modify the pixel value of the se
 
 Refer to the script below:
 
+```java
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -86,9 +89,10 @@ public class HandleScroll
    }
 
 }
+```
 How to scroll down to an element in Selenium until it is visible
 Refer to the Selenium script below.
-
+```java
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -115,6 +119,7 @@ public class ScrollByVisibleElement {
         js.executeScript("arguments[0].scrollIntoView();", Element);
     }
 }
+```
 Run Selenium Tests on Real Devices
 
 Output: The above code when executed, will launch the Firefox browser, navigate to the defined URL (Selenium scroll tutorial). Further, it will perform the scroll down until the element with text –  Try Selenium Testing For Free is found.
@@ -126,7 +131,7 @@ People also read: How to handle double click, mouse hover actions in Selenium
 
 How to scroll down to the bottom of the webpage using Selenium?
 Refer to the Selenium script below.
-
+```java
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -152,14 +157,14 @@ public class HandleScroll
 
   }
 }
-
+```
 Output: The code above will fetch the maximum height of the webpage from the Document Object Model, and then the scrollBy() method scrolls down to the bottom.
 
 Pro Tip: Want to dive deeper into Selenium implementation on BrowserStack with free interactive courses and lab exercises? Visit Test University
 
 How to scroll horizontally on a web page to a specific web element using Selenium
 Refer to the Selenium script below:
-
+```java
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -191,6 +196,7 @@ public class HandleScroll
       }
 
 }
+```
 Output: The code above starts the Firefox browser and navigates to the specified URL. Once the page loads, Selenium will automatically detect the specified element on the web page and will scroll horizontally until the element is fully visible in the browser window.
 
 Testing the scroll function is non-negotiable, as it is one of the most fundamental features of a web page. Teams prefer platforms like BrowserStack that help them write a number of automated selenium tests, including operations like scrolling in Selenium for testing websites on multiple browsers like Chrome, Firefox, Safari. Using BrowserStack’s Real Device Cloud you can test your website on 3000+ real devices and browsers for a maximum test coverage. It ensures accurate test results by taking real user conditions into account while testing as opposed to testing on Emulators and Simulators that just mimic the device.
